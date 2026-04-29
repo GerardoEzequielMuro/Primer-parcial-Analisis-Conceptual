@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis Conceptual - Parcial 1 | UCES 2026</title>
+<meta name="theme-color" content="#1a1a1a">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  background:#fafafa;color:#1a1a1a;line-height:1.7;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,250,250,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid #e5e5e5;padding:12px 0;
+}
+.nav-inner{
+  max-width:820px;margin:0 auto;padding:0 32px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.nav-title{font-weight:600;font-size:15px;white-space:nowrap}
+.nav-links{display:flex;gap:14px;overflow-x:auto;font-size:12.5px}
+.nav-links a{color:#666;text-decoration:none;white-space:nowrap}
+.nav-links a:hover{color:#1a1a1a}
+
+.container{max-width:820px;margin:0 auto;padding:90px 32px 80px}
+
+h1{font-size:30px;font-weight:700;letter-spacing:-.02em;margin-bottom:6px;line-height:1.2}
+.subtitle{color:#666;font-size:14.5px;margin-bottom:28px}
+
+h2{
+  font-size:22px;font-weight:700;margin:52px 0 14px;line-height:1.3;
+  padding-top:24px;border-top:1px solid #e5e5e5;
+}
+h2:first-of-type{border-top:none;padding-top:0;margin-top:0}
+h3{font-size:16px;font-weight:600;margin:24px 0 8px}
+
+p{margin:8px 0;color:#333}
+
+ul,ol{margin:10px 0 10px 22px}
+ul li,ol li{margin:4px 0;color:#333}
+
+table{
+  width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px;
+  background:#fff;border:1px solid #e5e5e5;border-radius:6px;overflow:hidden;
+}
+th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #eee}
+th{background:#f4f4f4;font-weight:600;font-size:13px}
+tr:last-child td{border-bottom:none}
+
+.box{
+  background:#f4f4f4;border-left:3px solid #1a1a1a;
+  padding:14px 18px;margin:14px 0;border-radius:0 6px 6px 0;
+}
+.box .label{
+  display:block;font-size:11.5px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.1em;color:#666;margin-bottom:6px;
+}
+
+strong{color:#1a1a1a;font-weight:600}
+em{color:#444}
+
+footer{
+  text-align:center;color:#999;font-size:13px;margin-top:60px;
+  padding-top:24px;border-top:1px solid #e5e5e5;
+}
+
+@media(max-width:640px){
+  .container{padding:80px 20px 60px}
+  h1{font-size:25px}
+  h2{font-size:19px}
+  h3{font-size:15px}
+  body{font-size:15px}
+  .nav-inner{padding:0 20px}
+  .nav-links{gap:10px;font-size:11.5px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-title">Análisis Conceptual · Parcial 1</div>
+    <div class="nav-links">
+      <a href="#parcial" style="color:#c00;font-weight:700">⭐ Parcial</a>
+      <a href="#t1">Wolton</a>
+      <a href="#t2">Saussure</a>
+      <a href="#t3">Oral/Escrito</a>
+      <a href="#t4">Bajtín</a>
+      <a href="#t5">Competencia</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+<h1>Análisis Conceptual. Primer Parcial</h1>
+<p class="subtitle">UCES 2026 · Resumen de los textos de cátedra</p>
+
+<div class="box">
+<span class="label">Temas del 1° parcial</span>
+<p><strong>1.</strong> Concepto de comunicación y cultura (Dominique Wolton).</p>
+<p><strong>2.</strong> Lenguaje, lengua y habla (Ferdinand de Saussure) y el signo lingüístico.</p>
+<p><strong>3.</strong> Oralidad y escritura: 10 diferencias.</p>
+<p><strong>4.</strong> Géneros discursivos (Mijaíl Bajtín).</p>
+<p><strong>5.</strong> Competencia comunicativa: concepto y clasificación.</p>
+</div>
+
+
+<h2 class="unit" id="parcial" style="color:#c00">⭐ Temas de parcial (ultra resumido)</h2>
+
+<p>Lo mínimo indispensable que tenés que poder responder de cada tema.</p>
+
+<h3>① Comunicación y cultura — Wolton</h3>
+<p><strong>Comunicación:</strong> 4 dimensiones (ideal de intercambio, medios masivos, nuevas técnicas, valores y símbolos del espacio público). <strong>Cultura:</strong> 4 formas hoy (élite, media/mayoría, popular, particularizante). Antes había 2 (élite vs popular).</p>
+
+<h3>② Lenguaje / lengua / habla — Saussure</h3>
+<p><strong>Lenguaje:</strong> facultad humana, heteróclito y multiforme. <strong>Lengua:</strong> sistema social de signos, producto que el individuo registra pasivamente. <strong>Habla:</strong> acto individual de voluntad e inteligencia con que cada hablante usa la lengua. <strong>Signo lingüístico:</strong> unión de <em>significante</em> (imagen acústica) + <em>significado</em> (concepto). Es <strong>arbitrario</strong>.</p>
+
+<h3>③ Oralidad vs escritura</h3>
+<p>Tienen <strong>10 diferencias</strong> clave: contexto compartido vs diferido; canal fónico vs grafemático; espontáneo vs planificado; redundancias vs precisión; presencia/ausencia del receptor; uso de gestos vs solo palabras; sintaxis libre vs cuidada; deícticos vs cohesión explícita; reversible (releer) vs efímero; registro informal vs formal.</p>
+
+<h3>④ Géneros discursivos — Bajtín</h3>
+<p>Cada esfera de uso del lenguaje elabora sus <strong>tipos relativamente estables de enunciados</strong> = géneros discursivos. Hay <strong>primarios</strong> (simples, vida cotidiana: charla, carta personal) y <strong>secundarios</strong> (complejos, escritos elaborados: novela, tesis, ensayo). Todo enunciado tiene 3 elementos: <strong>contenido temático, estilo</strong> (selección léxica) y <strong>composición</strong> (estructura).</p>
+
+<h3>⑤ Competencia comunicativa</h3>
+<p>Capacidad para comunicarse eficazmente. Incluye 5 sub-competencias: <strong>lingüística</strong> (gramática), <strong>discursiva</strong> (elegir el tipo de texto), <strong>textual</strong> (organizar el texto), <strong>pragmática</strong> (lograr el efecto buscado) y <strong>enciclopédica</strong> (conocimiento del mundo).</p>
+
+
+<h2 id="t1">1. Comunicación y cultura — Dominique Wolton</h2>
+
+<h3>1.1. Concepto de comunicación</h3>
+<p>Wolton plantea que la comunicación va mucho más allá de identificarla con los medios masivos. Son <strong>cuatro fenómenos complementarios</strong>:</p>
+
+<ol>
+  <li><strong>Ideal de expresión e intercambio:</strong> está en el origen de la cultura occidental y de la democracia. Presupone individuos libres e iguales. Es el sentido más antiguo, vinculado al concepto de <em>modernización</em>.</li>
+  <li><strong>Conjunto de medios masivos:</strong> desde la prensa hasta la radio y la televisión, que en un siglo trastornaron las relaciones entre comunicación y sociedad.</li>
+  <li><strong>Nuevas técnicas de comunicación:</strong> informática, telecomunicaciones, audiovisuales y su interconexión, que en menos de medio siglo modificaron las condiciones de intercambio y de poder a nivel mundial.</li>
+  <li><strong>Valores, símbolos y representaciones</strong> que organizan el espacio público de las democracias de masas: información, encuestas, argumentación, retórica. Es lo que permite a las colectividades <em>representarse</em>, entrar en <em>relaciones</em> unas con otras y <em>actuar</em> sobre el mundo.</li>
+</ol>
+
+<div class="box">
+<p><strong>Idea clave:</strong> información y comunicación son <strong>inseparables</strong>. La información da forma al mundo, da cuenta de los hechos; la comunicación es el modo de difundir esa información y de construir las representaciones. Las dos pertenecen al mismo sistema ligado a la modernidad, a Occidente y a la democracia.</p>
+</div>
+
+<h3>1.2. Concepto de cultura</h3>
+<p>Wolton señala tres sentidos clásicos de la palabra <strong>cultura</strong>:</p>
+<ul>
+  <li><strong>Sentido francés:</strong> remite a la idea de <em>creación, obra</em>. Patrimonio, saber, conocimiento.</li>
+  <li><strong>Sentido alemán:</strong> próximo a la idea de <em>civilización</em>. Integra valores, representaciones, símbolos y patrimonio compartidos por una comunidad en un momento de su historia.</li>
+  <li><strong>Sentido anglosajón:</strong> más antropológico. Toma en cuenta las maneras de vivir, los estilos, los saberes cotidianos, las imágenes y los mitos.</li>
+</ul>
+
+<h3>1.3. De dos a cuatro formas de cultura</h3>
+<p>Antes el problema era la oposición entre <strong>cultura de élite</strong> y <strong>cultura popular</strong>. Hoy hay <strong>cuatro formas</strong>:</p>
+
+<table>
+<tr><th>Forma</th><th>Características</th></tr>
+<tr><td><strong>Cultura de élite</strong></td><td>Antes en posición dominante, hoy se siente desposeída de ese lugar hegemónico por el surgimiento de la cultura media.</td></tr>
+<tr><td><strong>Cultura media / de la mayoría</strong></td><td>Es el gran cambio. Tiene sus propias normas y valores. Música, cine, publicidad, medios, viajes, TV, moda, estilos de vida y consumo. Es la cultura moderna, el "espíritu de la época". Da sensación de pertenecer a su tiempo, de "estar de onda".</td></tr>
+<tr><td><strong>Cultura popular</strong></td><td>Está desfasada. Compartida por menos personas que hace 50 años por la disminución de la población rural y obrera y la urbanización masiva.</td></tr>
+<tr><td><strong>Culturas particulares</strong></td><td>Antes incluidas en la popular, hoy se distinguen "en nombre del derecho a la diferencia" (mujer, regiones, minorías étnicas o religiosas).</td></tr>
+</table>
+
+<p>El surgimiento de la cultura media obedece a tres factores: <strong>(1)</strong> la democratización (museos masivos como el Louvre, Pompidou); <strong>(2)</strong> la elevación del nivel cultural mediante la educación; <strong>(3)</strong> la sociedad de consumo y la entrada de la cultura en la era industrial.</p>
+
+
+<h2 id="t2">2. Lenguaje, lengua y habla — Saussure</h2>
+
+<h3>2.1. La lengua como objeto de la lingüística</h3>
+<p>Saussure se pregunta por el <strong>objeto</strong> de la lingüística. El fenómeno lingüístico presenta dos caras que se corresponden, tiene un lado <strong>individual</strong> y un lado <strong>social</strong>, e implica un <em>sistema establecido</em> y una <em>evolución</em> al mismo tiempo. Por eso no se puede estudiar el lenguaje en su totalidad: hay que <strong>colocarse desde el primer momento en el terreno de la lengua</strong> y tomarla como norma de las demás manifestaciones del lenguaje.</p>
+
+<h3>2.2. Las tres categorías</h3>
+<table>
+<tr><th>Concepto</th><th>Definición</th></tr>
+<tr><td><strong>Lenguaje</strong></td><td>Facultad humana general. Es <em>multiforme y heteróclito</em>: a la vez físico, fisiológico y psíquico; pertenece al dominio individual y al social. No se deja clasificar en una sola categoría.</td></tr>
+<tr><td><strong>Lengua</strong></td><td>Es una parte determinada del lenguaje, aunque <em>esencial</em>. Es a la vez un <strong>producto social</strong> de la facultad del lenguaje y un <strong>conjunto de convenciones</strong> adoptadas por el cuerpo social para permitir el ejercicio de esa facultad. Es un <em>sistema de signos</em> que expresan ideas. Es la parte social del lenguaje, exterior al individuo, que por sí solo no puede ni crearla ni modificarla.</td></tr>
+<tr><td><strong>Habla</strong> (parole)</td><td>Es un <strong>acto individual de voluntad e inteligencia</strong>. Es la ejecución, siempre individual, donde el sujeto hablante utiliza el código de la lengua para expresar su pensamiento personal.</td></tr>
+</table>
+
+<div class="box">
+<p>Al separar la lengua del habla se separa a la vez: <strong>(1)</strong> lo que es social de lo que es individual; <strong>(2)</strong> lo que es esencial de lo que es accesorio y más o menos accidental.</p>
+</div>
+
+<h3>2.3. Caracteres de la lengua</h3>
+<ol>
+  <li>Es un <strong>objeto bien definido</strong> dentro del conjunto heteróclito del lenguaje. Es la <em>parte social</em>, exterior al individuo. Existe en virtud de un contrato establecido entre los miembros de la comunidad.</li>
+  <li>Se puede <strong>estudiar separadamente</strong>. La ciencia de la lengua puede prescindir de los demás elementos del lenguaje.</li>
+  <li>Mientras el lenguaje es heterogéneo, <strong>la lengua es homogénea</strong>: es un sistema de signos en el que sólo es esencial la <em>unión del sentido y la imagen acústica</em>, ambas igualmente psíquicas.</li>
+  <li>Es <strong>concreta</strong>: los signos lingüísticos no son abstracciones, son realidades con asiento en el cerebro y además son tangibles porque la escritura puede fijarlos.</li>
+</ol>
+
+<h3>2.4. El signo lingüístico</h3>
+<div class="box">
+<p>La lengua es un <strong>sistema de signos que expresan ideas</strong>. Cada signo lingüístico es una entidad psíquica de dos caras inseparables:</p>
+</div>
+
+<table>
+<tr><th>Componente</th><th>Qué es</th></tr>
+<tr><td><strong>Significante</strong></td><td>La <em>imagen acústica</em>. No es el sonido material (físico), sino su huella psíquica, la representación que tenemos de él.</td></tr>
+<tr><td><strong>Significado</strong></td><td>El <em>concepto</em>. La idea asociada a esa imagen acústica.</td></tr>
+</table>
+
+<p>Características del signo lingüístico:</p>
+<ul>
+  <li><strong>Arbitrario:</strong> el lazo que une significante y significado no tiene relación natural; es convención. Por eso "árbol" en español, "tree" en inglés, "arbre" en francés designan el mismo concepto.</li>
+  <li><strong>Lineal:</strong> el significante se desarrolla en el tiempo (los sonidos no se pueden pronunciar todos a la vez).</li>
+  <li><strong>Inmutable y mutable:</strong> el hablante individual no puede cambiarlo (inmutabilidad); pero la comunidad sí lo modifica con el tiempo (mutabilidad).</li>
+</ul>
+
+<h3>2.5. La semiología</h3>
+<p>Como la lengua es un sistema de signos comparable a la escritura, los ritos simbólicos, las señales militares, etc., Saussure concibe una <strong>ciencia que estudie la vida de los signos en el seno de la vida social</strong>: la <strong>semiología</strong> (del griego <em>sēmeîon</em>, signo). La lingüística sería entonces sólo una parte de esa ciencia general.</p>
+
+
+<h2 id="t3">3. Oralidad y escritura: 10 diferencias</h2>
+
+<p>Aunque ambas son manifestaciones del lenguaje, oralidad y escritura son <strong>dos formas distintas de comunicación</strong> con funciones socioculturales diferentes.</p>
+
+<table>
+<tr><th>#</th><th>Oralidad</th><th>Escritura</th></tr>
+<tr><td>1</td><td><strong>Canal fónico:</strong> sonidos, ondas acústicas.</td><td><strong>Canal grafemático:</strong> grafías, signos visuales.</td></tr>
+<tr><td>2</td><td><strong>Carácter temporal:</strong> efímera ("las palabras se las lleva el viento"). No se puede reelaborar.</td><td><strong>Carácter espacial:</strong> permanente. Permite reelaboración, modificación, mayor precisión.</td></tr>
+<tr><td>3</td><td><strong>Contexto compartido:</strong> emisor y receptor comparten tiempo y espacio (cara a cara) o al menos tiempo (teléfono).</td><td><strong>Comunicación diferida:</strong> emisor y receptor están separados en el tiempo y/o el espacio.</td></tr>
+<tr><td>4</td><td><strong>Receptor presente:</strong> retroalimenta con gestos, miradas, asentimientos. El emisor regula su discurso en función de eso.</td><td><strong>Receptor ausente:</strong> el escritor sólo puede imaginar a su lector. No hay retroalimentación inmediata.</td></tr>
+<tr><td>5</td><td><strong>Apoyo paraverbal y no verbal:</strong> entonación, pausas, gestos, mímica, distancia, miradas completan el mensaje.</td><td><strong>Sólo signos lingüísticos:</strong> compensa con puntuación, formato, tipografía, paratexto.</td></tr>
+<tr><td>6</td><td><strong>Espontaneidad:</strong> reiteraciones, interjecciones, onomatopeyas, expresiones de subjetividad ("¿viste?", "¿me entendés?").</td><td><strong>Planificación:</strong> el texto se piensa, se borra, se reescribe. Se evitan repeticiones.</td></tr>
+<tr><td>7</td><td><strong>Sintaxis libre:</strong> oraciones inacabadas, rupturas, anacolutos, mezcla de registros.</td><td><strong>Sintaxis cuidada:</strong> oraciones completas, mantenimiento del registro y del lecto.</td></tr>
+<tr><td>8</td><td><strong>Uso de deícticos:</strong> "aquí", "ahora", "esto", "aquel". Funcionan porque el contexto se comparte.</td><td><strong>Cohesión explícita:</strong> hay que precisar tiempo y lugar; usar conectores y procedimientos cohesivos para evitar ambigüedades.</td></tr>
+<tr><td>9</td><td><strong>Implícitos y sobreentendidos:</strong> mucho se infiere por el conocimiento compartido entre interlocutores.</td><td><strong>Mayor explicitación:</strong> se trabaja con presupuestos e implicaciones lógicas accesibles a un lector que no comparte la situación.</td></tr>
+<tr><td>10</td><td><strong>Registro informal:</strong> coloquial, con marcas de subjetividad, lectos regionales y sociales.</td><td><strong>Registro formal predominante:</strong> respeta convenciones sociales del "lenguaje escrito" (salvo en literatura, que usa todos los registros).</td></tr>
+</table>
+
+<div class="box">
+<p><strong>En síntesis:</strong> la oralidad es <em>inmediata, espontánea, compartida</em>. La escritura es <em>diferida, planificada, autónoma</em>. Por eso el escritor debe dejar en su texto todas las "instrucciones" que el lector necesita para reconstruir el sentido.</p>
+</div>
+
+
+<h2 id="t4">4. Géneros discursivos — Mijaíl Bajtín</h2>
+
+<h3>4.1. El planteo</h3>
+<p>Bajtín parte de una idea central: el uso de la lengua se lleva a cabo en forma de <strong>enunciados concretos</strong> (orales y escritos) que pertenecen a los participantes de una u otra esfera de la actividad humana. <strong>Cada esfera del uso de la lengua elabora sus tipos relativamente estables de enunciados</strong>, a los que llama <strong>géneros discursivos</strong>.</p>
+
+<div class="box">
+<p>La diversidad de géneros discursivos es enorme porque las esferas de la actividad humana son inagotables: una conversación de amigos, una orden militar, un documento oficial, una novela, una clase, una entrevista, un sermón, un mensaje de texto, un artículo científico... cada uno responde a su género.</p>
+</div>
+
+<h3>4.2. Géneros primarios y secundarios</h3>
+<p>Bajtín distingue dos clases:</p>
+
+<table>
+<tr><th>Tipo</th><th>Características</th><th>Ejemplos</th></tr>
+<tr><td><strong>Primarios</strong> (simples)</td><td>Surgen en la <em>comunicación discursiva inmediata</em>: situaciones espontáneas y cotidianas. Son orales en su mayoría.</td><td>Diálogo cotidiano, saludo, chiste, carta personal, pregunta-respuesta.</td></tr>
+<tr><td><strong>Secundarios</strong> (complejos)</td><td>Surgen en condiciones de la <em>comunicación cultural más compleja, organizada y desarrollada</em> (artística, científica, sociopolítica). Suelen ser escritos. <strong>Absorben y reelaboran</strong> los géneros primarios (ej.: una novela contiene diálogos, cartas).</td><td>Novela, drama, investigación científica, ensayo, tesis, discurso parlamentario, géneros periodísticos.</td></tr>
+</table>
+
+<h3>4.3. El enunciado como unidad real</h3>
+<p>Para Bajtín, la unidad real de la comunicación discursiva <strong>no es la oración</strong> (que es una unidad gramatical) sino el <strong>enunciado</strong>. El enunciado tiene <em>fronteras precisas</em>: empieza con la palabra del hablante y termina cuando éste cede el turno al otro (cambio de sujetos discursivos).</p>
+
+<h3>4.4. Los tres elementos de todo enunciado</h3>
+<p>Cada enunciado, dentro de su género, está marcado por la unidad inseparable de tres elementos:</p>
+
+<ol>
+  <li><strong>Contenido temático:</strong> el tema u objeto del que trata el enunciado, lo que se dice. Cada esfera limita los temas posibles.</li>
+  <li><strong>Estilo:</strong> la selección de los recursos léxicos, fraseológicos y gramaticales. Cada género impone (o admite) ciertos estilos.</li>
+  <li><strong>Composición:</strong> la estructura, la organización del enunciado, cómo se disponen sus partes.</li>
+</ol>
+
+<div class="box">
+<p>Estos tres elementos están <strong>indisolublemente vinculados</strong> en la totalidad del enunciado y se determinan por la <em>especificidad de la esfera</em> en la que se produce. Por eso, un género discursivo es un tipo relativamente estable de combinación entre tema, estilo y composición.</p>
+</div>
+
+<h3>4.5. Importancia del concepto</h3>
+<p>Conocer los géneros discursivos es clave para la comunicación: hablar significa <strong>moldear el discurso en formas genéricas</strong>. Si no dispusiéramos de los géneros, si tuviéramos que crearlos por primera vez en cada acto de comunicación, sería casi imposible comunicarse. Los géneros nos permiten predecir, comprender y producir enunciados adecuados a cada situación.</p>
+
+
+<h2 id="t5">5. Competencia comunicativa: concepto y clasificación</h2>
+
+<h3>5.1. Concepto</h3>
+<div class="box">
+<p>La <strong>competencia comunicativa</strong> es el conjunto de capacidades o habilidades que pone en juego un hablante para producir e interpretar enunciados <em>eficaces y adecuados</em> a la situación comunicativa.</p>
+</div>
+
+<p>El concepto surge cuando la lingüística supera el modelo estructuralista (centrado sólo en la oración y en la competencia lingüística de Chomsky) y reconoce que comunicarse no es sólo construir oraciones gramaticalmente correctas, sino producir <strong>textos o discursos</strong> apropiados a contextos cambiantes.</p>
+
+<p>El propósito de la educación lingüística es <strong>desarrollar la competencia comunicativa</strong> de los alumnos: que puedan inscribirse en su lengua, hacerse responsables de sus enunciados y mejorar sus desempeños orales y escritos.</p>
+
+<h3>5.2. Clasificación: las 5 sub-competencias</h3>
+
+<table>
+<tr><th>Competencia</th><th>En qué consiste</th><th>Ejemplo</th></tr>
+<tr><td><strong>Lingüística</strong></td><td>Capacidad de formular enunciados sintáctica y léxicamente adecuados, comprensibles según las reglas de la lengua.</td><td>Decir <em>"Esta planta se está marchitando"</em> y no <em>"marchitando planta se está esta"</em>.</td></tr>
+<tr><td><strong>Discursiva</strong></td><td>Capacidad de elegir el <em>tipo de texto</em> adecuado a la situación o circunstancia.</td><td>Pedir permiso al director con una <em>solicitud</em> y no informándole. Escribir una carta de lectores y no un cuento para criticar al diario.</td></tr>
+<tr><td><strong>Textual</strong></td><td>Capacidad de construir un texto <em>bien organizado</em> dentro del tipo elegido. Saber de coherencia, cohesión, estructura.</td><td>Narrar de modo inteligible y no desordenado. Incluir las causas de un pedido en una solicitud.</td></tr>
+<tr><td><strong>Pragmática</strong></td><td>Capacidad de lograr el <em>efecto intencional</em> buscado mediante el texto: convencer, emocionar, informar, etc.</td><td>Convencer al interlocutor con argumentos adecuados y bien dispuestos en el texto.</td></tr>
+<tr><td><strong>Enciclopédica</strong></td><td>Conocimiento del mundo y conjunto de saberes que permiten un intercambio comunicativo eficaz. Excede la lengua pero la condiciona.</td><td>Saber qué es "Hawthorne" para entender un texto sobre Mayo. Saber quién es Borges para captar una alusión.</td></tr>
+</table>
+
+<h3>5.3. Diferencia con el enfoque tradicional</h3>
+<p>La escuela tradicional se centró sólo en la <strong>competencia lingüística</strong> (gramática, análisis sintáctico, ortografía). Por eso aparecía la queja: <em>"Las pruebas de análisis sintáctico están perfectas, pero cuando escribe es un desastre"</em>. Pero los chicos llegan a la escuela con cierta competencia lingüística básica (ningún niño dice <em>"el lápiz mi abuela el zoológico comprar"</em>): lo que necesitan desarrollar son las <strong>otras cuatro</strong>, que se aprenden durante toda la vida con la práctica de leer y escribir distintos tipos de texto en distintas situaciones.</p>
+
+<h3>5.4. Variedades lingüísticas (relacionado)</h3>
+<p>La competencia comunicativa también implica saber elegir la <strong>variedad lingüística</strong> adecuada. Hay dos clases:</p>
+
+<table>
+<tr><th>Tipo</th><th>Variedades</th></tr>
+<tr><td><strong>Lectos</strong> (variedades del usuario)</td><td><em>Dialecto</em> (región: español rioplatense, mexicano), <em>sociolecto</em> (clase social), <em>cronolecto</em> (edad/generación). El <em>idiolecto</em> es la combinación particular de los tres en cada individuo.</td></tr>
+<tr><td><strong>Registros</strong> (variedades de la situación)</td><td>Oral / escrito · formal / informal · técnico / no técnico. Un buen comunicador adapta su registro al contexto.</td></tr>
+</table>
+
+
+<h2>📋 Checklist de últimos 10 minutos</h2>
+<ul>
+  <li><strong>Wolton — Comunicación:</strong> 4 dimensiones (ideal de intercambio + medios masivos + nuevas técnicas + valores/símbolos del espacio público).</li>
+  <li><strong>Wolton — Cultura:</strong> 4 formas hoy (élite + media/mayoría + popular + particularizante). Antes eran 2.</li>
+  <li><strong>Saussure — Tres categorías:</strong> lenguaje (facultad), lengua (sistema social), habla (acto individual).</li>
+  <li><strong>Saussure — Signo lingüístico:</strong> significante (imagen acústica) + significado (concepto). Es <strong>arbitrario</strong>, lineal, inmutable/mutable.</li>
+  <li><strong>Oralidad/escritura:</strong> recordá los pares contrapuestos (temporal/espacial, contexto compartido/diferido, espontánea/planificada, etc.).</li>
+  <li><strong>Bajtín:</strong> géneros discursivos = tipos relativamente estables de enunciados que elabora cada esfera. <strong>Primarios</strong> (simples, cotidianos) y <strong>secundarios</strong> (complejos, escritos). Tres elementos: <strong>tema, estilo, composición</strong>.</li>
+  <li><strong>Competencia comunicativa:</strong> 5 sub-competencias (lingüística, discursiva, textual, pragmática, enciclopédica).</li>
+  <li>La unidad real de la comunicación es el <strong>enunciado</strong> (Bajtín), no la oración.</li>
+</ul>
+
+<footer>
+Resumen para parcial · Análisis Conceptual · UCES 2026
+</footer>
+
+</div>
+
+</body>
+</html>
