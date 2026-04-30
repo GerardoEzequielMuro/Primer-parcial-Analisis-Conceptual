@@ -76,6 +76,34 @@ footer{
   padding-top:24px;border-top:1px solid #e5e5e5;
 }
 
+/* Mapa conceptual */
+.mc{background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:24px 18px;margin:18px 0}
+.mc-center{
+  text-align:center;font-weight:700;font-size:15.5px;line-height:1.35;
+  background:#1a1a1a;color:#fff;padding:14px 18px;border-radius:10px;
+  margin:0 auto 22px;max-width:340px;
+}
+.mc-center small{display:block;font-weight:400;font-size:12px;opacity:.85;margin-top:3px}
+.mc-arrow{
+  text-align:center;color:#c00;font-size:18px;font-weight:700;
+  margin:-12px 0 14px;letter-spacing:.2em;
+}
+.mc-branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.mc-branch{background:#f4f4f4;border-radius:10px;padding:12px 14px;border-top:3px solid #c00}
+.mc-branch.mc-b2{border-top-color:#1a1a1a}
+.mc-branch.mc-b3{border-top-color:#666}
+.mc-branch.mc-b4{border-top-color:#c00}
+.mc-branch.mc-b5{border-top-color:#1a1a1a}
+.mc-node{font-weight:600;font-size:13.5px;line-height:1.3}
+.mc-node small{display:block;font-weight:400;font-size:11.5px;color:#666;margin-top:2px}
+.mc-sub{margin:8px 0 0 18px;font-size:13px}
+.mc-sub li{color:#333;margin:2px 0}
+.mc-link{
+  display:block;margin-top:8px;font-size:12px;color:#c00;
+  text-decoration:none;font-weight:600;
+}
+.mc-link:hover{text-decoration:underline}
+
 @media(max-width:640px){
   .container{padding:80px 20px 60px}
   h1{font-size:25px}
@@ -84,6 +112,7 @@ footer{
   body{font-size:15px}
   .nav-inner{padding:0 20px}
   .nav-links{gap:10px;font-size:11.5px}
+  .mc-branches{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -95,6 +124,7 @@ footer{
     <div class="nav-links">
       <a href="parciales.html" style="color:#c00;font-weight:700">📝 Parciales</a>
       <a href="#cheat">⭐ Cheatsheet</a>
+      <a href="#mapa">🗺️ Mapa</a>
       <a href="#t1">Wolton</a>
       <a href="#t2">Saussure</a>
       <a href="#t3">Oral/Esc</a>
@@ -122,8 +152,8 @@ footer{
 
 <h2 id="cheat" style="color:#c00">⭐ Cheatsheet (lo mínimo)</h2>
 
-<h3>① Comunicación y cultura (Wolton)</h3>
-<p><strong>Comunicación:</strong> 4 dimensiones (ideal de intercambio, medios masivos, nuevas técnicas, valores/símbolos del espacio público). <strong>Cultura:</strong> 4 formas hoy (élite, media/mayoría, popular, particularizante). Antes había 2 (élite vs popular).</p>
+<h3>① Comunicación y cultura (Wolton + Everett + Quino)</h3>
+<p><strong>Comunicación (Wolton):</strong> 4 dimensiones (ideal de intercambio, medios masivos, nuevas técnicas, valores/símbolos del espacio público). <strong>Cultura:</strong> "conjunto de significados, creaciones y estilos de vida que otorgan identidad y genera sentido de pertenencia". 3 sentidos clásicos (francés = creación/obra; alemán = civilización; anglosajón = antropológico). <strong>Relación:</strong> directa e inseparable; la comunicación transporta y transforma la cultura. <strong>Everett:</strong> lenguaje como artefacto cultural (3 sufijos = niveles de certeza). <strong>Quino:</strong> lenguaje como puente o muro / barrera cultural.</p>
 
 <h3>② Lenguaje / lengua / habla (Saussure)</h3>
 <p><strong>Lenguaje:</strong> facultad humana, heteróclito y multiforme. <strong>Lengua:</strong> sistema social de signos. <strong>Habla:</strong> acto individual de voluntad e inteligencia. <strong>Signo:</strong> significante (imagen acústica) + significado (concepto). Es <strong>arbitrario, lineal, inmutable/mutable</strong>.</p>
@@ -136,6 +166,87 @@ footer{
 
 <h3>⑤ Competencia comunicativa</h3>
 <p>5 sub-competencias: <strong>lingüística, discursiva, textual, pragmática, enciclopédica</strong>.</p>
+
+
+<h2 id="mapa">🗺️ Mapa Conceptual</h2>
+<p style="color:#666;font-size:14px;margin-bottom:8px">Cómo se conectan los 5 temas. La <strong>comunicación</strong> es el fenómeno central; los autores aportan distintas miradas (Wolton la sitúa frente a la cultura, Saussure analiza su sistema, Bajtín sus enunciados).</p>
+
+<div class="mc">
+  <div class="mc-center">
+    COMUNICACIÓN
+    <small>fenómeno social, cultural y lingüístico</small>
+  </div>
+  <div class="mc-arrow">▼ ▼ ▼ ▼ ▼</div>
+  <div class="mc-branches">
+
+    <div class="mc-branch">
+      <div class="mc-node">① Wolton + Everett + Quino<small>Comunicación y cultura</small></div>
+      <ul class="mc-sub">
+        <li><strong>4 dimensiones:</strong> ideal · medios masivos · nuevas técnicas · valores y símbolos</li>
+        <li><strong>Cultura:</strong> identidad + sentido de pertenencia</li>
+        <li><strong>3 sentidos:</strong> francés / alemán / anglosajón</li>
+        <li><strong>Relación:</strong> directa e inseparable</li>
+        <li><strong>Everett:</strong> lenguaje = artefacto cultural (3 sufijos pirahã)</li>
+        <li><strong>Quino:</strong> puente o muro</li>
+      </ul>
+      <a href="#t1" class="mc-link">→ Ir al tema 1</a>
+    </div>
+
+    <div class="mc-branch mc-b2">
+      <div class="mc-node">② Saussure<small>Sistema de la lengua</small></div>
+      <ul class="mc-sub">
+        <li><strong>Lenguaje</strong> (facultad humana, heteróclito)</li>
+        <li><strong>Lengua</strong> (sistema social) ↔ <strong>Habla</strong> (acto individual)</li>
+        <li><strong>Signo:</strong> significante + significado</li>
+        <li><strong>Caracteres:</strong> arbitrario · lineal · in/mutable</li>
+        <li><strong>Semiología:</strong> ciencia general de los signos</li>
+      </ul>
+      <a href="#t2" class="mc-link">→ Ir al tema 2</a>
+    </div>
+
+    <div class="mc-branch mc-b3">
+      <div class="mc-node">③ Oralidad / Escritura<small>10 diferencias</small></div>
+      <ul class="mc-sub">
+        <li>Compartido ↔ Diferido</li>
+        <li>Fónico ↔ Grafemático</li>
+        <li>Espontáneo ↔ Planificado</li>
+        <li>Gestos ↔ Solo palabras</li>
+        <li>Efímero ↔ Permanente</li>
+        <li>Informal ↔ Formal</li>
+      </ul>
+      <a href="#t3" class="mc-link">→ Ir al tema 3</a>
+    </div>
+
+    <div class="mc-branch mc-b4">
+      <div class="mc-node">④ Bajtín<small>Géneros discursivos</small></div>
+      <ul class="mc-sub">
+        <li>Cada esfera elabora tipos <em>relativamente estables</em> de enunciados</li>
+        <li><strong>Primarios</strong> (simples, cotidianos) ↔ <strong>Secundarios</strong> (complejos)</li>
+        <li><strong>3 elementos:</strong> tema · estilo · composición</li>
+        <li>Unidad real de la comunicación = el <strong>enunciado</strong></li>
+      </ul>
+      <a href="#t4" class="mc-link">→ Ir al tema 4</a>
+    </div>
+
+    <div class="mc-branch mc-b5">
+      <div class="mc-node">⑤ Competencia comunicativa<small>5 sub-competencias</small></div>
+      <ul class="mc-sub">
+        <li><strong>Lingüística</strong> (formar oraciones)</li>
+        <li><strong>Discursiva</strong> (elegir tipo de texto)</li>
+        <li><strong>Textual</strong> (organizar coherentemente)</li>
+        <li><strong>Pragmática</strong> (lograr efecto)</li>
+        <li><strong>Enciclopédica</strong> (cultura general)</li>
+      </ul>
+      <a href="#t5" class="mc-link">→ Ir al tema 5</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="box">
+<span class="label">Para conectar en el parcial</span>
+<p><strong>Wolton</strong> ubica la comunicación en su dimensión <em>social y cultural</em> (qué es y para qué sirve en la sociedad). <strong>Saussure</strong> baja al <em>sistema interno</em> que la hace posible (lengua / habla / signo). <strong>Bajtín</strong> muestra que ese sistema se concretiza en <em>enunciados</em> de cada esfera. <strong>Oralidad y escritura</strong> son los dos canales mayores de esos enunciados. Y la <strong>competencia comunicativa</strong> es lo que cada hablante necesita dominar para que todo lo anterior funcione en una situación real.</p>
+</div>
 
 
 <h2 id="t1">1. Wolton: Comunicación y cultura</h2>
@@ -152,28 +263,35 @@ footer{
 <p><strong>Idea clave:</strong> información y comunicación son inseparables. La información da forma al mundo; la comunicación la difunde y construye representaciones.</p>
 </div>
 
-<h3>1.2. Cultura: 3 sentidos clásicos</h3>
-<p>Wolton arranca diciendo que la palabra "cultura" es <em>inmensa</em>, con referencias innumerables, y que se trata de situarla en relación con la comunicación. Distingue tres sentidos clásicos:</p>
+<h3>1.2. Concepto de cultura</h3>
+<div class="box">
+<p><strong>Definición para arrancar la respuesta</strong> (la profe la dio por buena en TP): "La cultura es el <strong>conjunto de significados, creaciones y estilos de vida</strong> que otorgan <strong>identidad</strong> a un grupo y genera <strong>sentido de pertenencia</strong>."</p>
+</div>
+<p>Wolton aclara que la palabra "cultura" es <em>inmensa</em>, con referencias innumerables, y que se trata de situarla en relación con la comunicación. Toma <strong>tres sentidos históricos</strong> clásicos:</p>
 <ul>
-  <li><strong>Sentido francés:</strong> remite a la idea de <em>creación, obra</em>. Supone una capacidad de definición de lo que en un momento dado se considera <strong>patrimonio, saber, creación y conocimiento</strong>, entendiendo que las definiciones evolucionan con el tiempo.</li>
-  <li><strong>Sentido alemán:</strong> próximo a la idea de <em>civilización</em>. Integra los <strong>valores, representaciones, símbolos y patrimonio</strong> compartidos por una comunidad en un momento de su historia.</li>
-  <li><strong>Sentido anglosajón:</strong> más <em>antropológico</em>. Toma en cuenta las <strong>maneras de vivir, los estilos, los saberes cotidianos, las imágenes y los mitos</strong>.</li>
+  <li><strong>Sentido francés:</strong> idea de <em>creación, obra y patrimonio</em>. Lo que una sociedad considera <strong>saber, creación y conocimiento</strong> en una época (las definiciones evolucionan con el tiempo).</li>
+  <li><strong>Sentido alemán:</strong> próximo a la idea de <em>civilización</em>. Se enfoca en los <strong>valores, representaciones y símbolos</strong> que comparte una comunidad en un momento de su historia.</li>
+  <li><strong>Sentido anglosajón:</strong> mirada <em>antropológica</em>. <strong>Estilo de vida</strong>, saberes cotidianos, costumbres, imágenes y mitos.</li>
 </ul>
 
-<h3>1.3. De 2 a 4 formas de cultura</h3>
-<p>En el pasado el problema era la oposición entre <strong>cultura de élite</strong> y <strong>cultura popular</strong>. Cuando se hablaba de cultura, se trataba de la primera (tanto en las obras como en los gustos, la educación o la comunicación). La cultura popular era la cultura de la mayoría pero <em>sin un real "valor cultural"</em>: debió aguardarse al siglo XIX y la lucha de clases para que se valorizara. Hoy en día no hay dos culturas, sino <strong>cuatro</strong>:</p>
-<table>
-<tr><th>Forma</th><th>Características</th></tr>
-<tr><td><strong>Élite</strong></td><td>Antes dominante. Hoy desposeída de ese lugar por el surgimiento de la cultura media.</td></tr>
-<tr><td><strong>Media / mayoría</strong></td><td>El gran cambio. Música, cine, publicidad, TV, moda, consumo. Es el "espíritu de la época", "estar de onda".</td></tr>
-<tr><td><strong>Popular</strong></td><td>Desfasada. Compartida por menos personas por la urbanización masiva y la caída de población rural y obrera.</td></tr>
-<tr><td><strong>Particularizantes</strong></td><td>Antes en la popular. Hoy se distinguen "en nombre del derecho a la diferencia" (mujer, regiones, minorías).</td></tr>
-</table>
-<p><strong>3 factores</strong> del surgimiento de la cultura media: <strong>(1)</strong> democratización (museos masivos: Louvre, Pompidou); <strong>(2)</strong> elevación del nivel cultural por la educación; <strong>(3)</strong> sociedad de consumo y entrada de la cultura en la era industrial.</p>
+<h3>1.3. Relación entre comunicación y cultura</h3>
+<p>La relación es <strong>directa y prácticamente inseparable</strong>. La comunicación es una parte fundamental de la cultura: es la <strong>herramienta principal que la transporta</strong>, la transmite de generación en generación y, al mismo tiempo, <strong>la transforma</strong>.</p>
+<p>Hoy, en una época de comunicación masiva y constante, los <strong>medios y las nuevas tecnologías</strong> son los encargados de movilizar los valores y estilos de vida. <em>No hay cultura que pueda sostenerse o evolucionar sin las dinámicas de comunicación que permiten a las comunidades interactuar y compartir sus formas de ver el mundo.</em></p>
 <div class="box">
-<p>El resultado es una <em>contradicción típica de la sociedad individualista de masas</em>: coexisten una cultura que valoriza al individuo y una cultura de la mayoría. Asistimos a una verdadera diversificación de las culturas y a su legitimación.</p>
+<p><strong>Imagen para cerrar la respuesta:</strong> la comunicación y la cultura funcionan como <strong>puente</strong> para las relaciones humanas o como <strong>muros</strong> cuando los códigos (valores, símbolos) no son compartidos. Caso típico: existe intercambio pero no buena comunicación porque no hay desconexión de códigos, generando <em>relatos paralelos</em>.</p>
 </div>
 
+<h3>1.4. Lenguaje como artefacto cultural (Daniel Everett y Quino)</h3>
+<p><strong>Daniel Everett</strong>, en su artículo, define el <strong>lenguaje como un artefacto creado por la cultura</strong>. Relatando sus vivencias con la tribu pirahã, muestra que existen <strong>tres "sufijos"</strong> que marcan de dónde viene la información:</p>
+<ul>
+  <li>"Yo vi eso con mis propios ojos."</li>
+  <li>"Alguien me contó eso."</li>
+  <li>"Yo digo esto basándome en evidencias."</li>
+</ul>
+<p>Esto habla de un <strong>valor cultural en el "cuidado"</strong>: para la tribu es vital que el interlocutor presente pruebas de lo dicho. Se notan <strong>"niveles de certeza"</strong> codificados en la propia lengua.</p>
+<div class="box">
+<p><strong>Quino (las historietas):</strong> el lenguaje aparece como <strong>barrera cultural</strong>. Si bien hay <em>comunicación directa</em> y el mensaje llega con fluidez, el <strong>código y el simbolismo no son comprendidos correctamente</strong> en todas sus dimensiones. Lección: la comunicación y la cultura pueden ser <strong>puente o muro</strong>.</p>
+</div>
 
 <h2 id="t2">2. Saussure: Lenguaje, lengua, habla y signo</h2>
 
@@ -303,7 +421,9 @@ footer{
 <h2>📋 Checklist últimos 10 minutos</h2>
 <ul>
   <li><strong>Wolton, comunicación:</strong> 4 dimensiones (ideal de intercambio + medios masivos + nuevas técnicas + valores/símbolos del espacio público).</li>
-  <li><strong>Wolton, cultura:</strong> 4 formas hoy (élite + media/mayoría + popular + particularizantes). Antes 2.</li>
+  <li><strong>Wolton, cultura:</strong> "conjunto de significados, creaciones y estilos de vida que otorgan identidad y sentido de pertenencia". 3 sentidos clásicos (francés = creación; alemán = civilización; anglosajón = antropológico).</li>
+  <li><strong>Comunicación–cultura:</strong> directa e inseparable. La comunicación transporta, transmite y transforma la cultura. Puede ser <em>puente</em> o <em>muro</em>.</li>
+  <li><strong>Everett:</strong> lenguaje como artefacto cultural. 3 sufijos pirahã = niveles de certeza. <strong>Quino:</strong> lenguaje como barrera cultural.</li>
   <li><strong>Saussure, tres categorías:</strong> lenguaje (facultad), lengua (sistema social), habla (acto individual).</li>
   <li><strong>Saussure, signo:</strong> significante (imagen acústica) + significado (concepto). <strong>Arbitrario</strong>, lineal, inmutable/mutable.</li>
   <li><strong>Oralidad/escritura:</strong> pares contrapuestos (temporal/espacial, compartido/diferido, espontánea/planificada).</li>
