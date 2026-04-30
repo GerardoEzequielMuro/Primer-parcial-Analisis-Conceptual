@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modelos de Parcial · Análisis Conceptual | UCES 2026</title>
+<meta name="theme-color" content="#1a1a1a">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  background:#fafafa;color:#1a1a1a;line-height:1.65;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,250,250,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid #e5e5e5;padding:12px 0;
+}
+.nav-inner{
+  max-width:820px;margin:0 auto;padding:0 32px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.nav-title{font-weight:600;font-size:15px;white-space:nowrap}
+.nav-links{display:flex;gap:14px;overflow-x:auto;font-size:12.5px}
+.nav-links a{color:#666;text-decoration:none;white-space:nowrap}
+.nav-links a:hover{color:#1a1a1a}
+
+.container{max-width:820px;margin:0 auto;padding:90px 32px 80px}
+
+h1{font-size:30px;font-weight:700;letter-spacing:-.02em;margin-bottom:6px;line-height:1.2}
+.subtitle{color:#666;font-size:14.5px;margin-bottom:28px}
+
+h2{
+  font-size:24px;font-weight:700;margin:48px 0 8px;line-height:1.3;
+  padding-top:24px;border-top:2px solid #1a1a1a;color:#c00;
+}
+h2:first-of-type{border-top:none;padding-top:0;margin-top:0}
+.exam-meta{color:#666;font-size:13.5px;margin-bottom:20px}
+
+h3{font-size:17px;font-weight:600;margin:28px 0 6px;color:#1a1a1a}
+
+.q{
+  background:#fff;border:1px solid #e5e5e5;border-radius:8px;
+  padding:16px 20px;margin:14px 0;
+}
+.q-num{
+  display:inline-block;background:#1a1a1a;color:#fff;
+  font-size:12px;font-weight:700;padding:3px 9px;border-radius:4px;
+  margin-bottom:8px;letter-spacing:.05em;
+}
+.q-text{font-weight:500;color:#1a1a1a;margin-bottom:10px}
+.q ul.options{list-style:none;margin:8px 0 0;padding:0}
+.q ul.options li{
+  padding:8px 12px;margin:5px 0;background:#fafafa;
+  border:1px solid #eee;border-radius:5px;font-size:14.5px;
+}
+.q ul.options li strong{margin-right:8px;color:#666}
+
+details{
+  margin-top:12px;border-top:1px dashed #ddd;padding-top:10px;
+  font-size:14.5px;
+}
+details summary{
+  cursor:pointer;font-size:13px;font-weight:600;color:#c00;
+  list-style:none;user-select:none;
+}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"▶ ";font-size:10px;margin-right:4px}
+details[open] summary::before{content:"▼ "}
+details[open] summary{margin-bottom:10px}
+details .answer{
+  background:#f4f4f4;border-left:3px solid #c00;
+  padding:12px 16px;border-radius:0 6px 6px 0;color:#333;
+}
+details .answer strong{color:#1a1a1a}
+
+p{margin:6px 0;color:#333}
+ul,ol{margin:8px 0 8px 22px}
+ul li,ol li{margin:3px 0;color:#333}
+
+.box{
+  background:#f4f4f4;border-left:3px solid #1a1a1a;
+  padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0;
+}
+.box .label{
+  display:block;font-size:11.5px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.1em;color:#666;margin-bottom:6px;
+}
+
+.fragment{
+  background:#fffbe6;border-left:3px solid #d4a017;
+  padding:14px 18px;margin:14px 0;border-radius:0 6px 6px 0;
+  font-style:italic;color:#444;
+}
+
+strong{color:#1a1a1a;font-weight:600}
+em{color:#444}
+
+footer{
+  text-align:center;color:#999;font-size:13px;margin-top:60px;
+  padding-top:24px;border-top:1px solid #e5e5e5;
+}
+
+@media(max-width:640px){
+  .container{padding:80px 20px 60px}
+  h1{font-size:25px}
+  h2{font-size:21px}
+  h3{font-size:15.5px}
+  body{font-size:15px}
+  .nav-inner{padding:0 20px}
+  .nav-links{gap:10px;font-size:11.5px}
+  .q{padding:14px 16px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-title">📝 Modelos de Parcial</div>
+    <div class="nav-links">
+      <a href="index.html">← Resumen</a>
+      <a href="#m1">Modelo 1</a>
+      <a href="#m2">Modelo 2</a>
+      <a href="#tips">Tips</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+<h1>Modelos de Parcial</h1>
+<p class="subtitle">Análisis Conceptual · UCES 2026 · Para autoevaluarte antes del examen</p>
+
+<div class="box">
+<span class="label">Cómo usarlos</span>
+<p>Resolvé cada modelo <strong>sin mirar el resumen</strong>. Después abrí las respuestas (▶ Ver respuesta) para corregirte. Apuntá los temas donde fallaste y volvé a leerlos en el <a href="index.html" style="color:#c00;font-weight:600">resumen</a>.</p>
+</div>
+
+
+<h2 id="m1">Modelo 1 · Desarrollo conceptual</h2>
+<p class="exam-meta">⏱ Tiempo estimado: 90 min · 6 preguntas · Cada respuesta debe desarrollarse en 1-2 párrafos.</p>
+
+
+<div class="q">
+<span class="q-num">1</span>
+<p class="q-text">Defina el concepto de <strong>comunicación</strong> según Dominique Wolton. Enumere y explique brevemente sus <strong>cuatro dimensiones</strong>. ¿Por qué afirma el autor que información y comunicación son inseparables?</p>
+<details><summary>Ver respuesta</summary><div class="answer">
+<p>Para Wolton, la comunicación va más allá de identificarla con los medios masivos. Son <strong>cuatro fenómenos complementarios</strong>:</p>
+<ol>
+  <li><strong>Ideal de expresión e intercambio:</strong> en el origen de la cultura occidental y la democracia. Presupone individuos libres e iguales. Es el sentido más antiguo, vinculado a la <em>modernización</em>.</li>
+  <li><strong>Conjunto de medios masivos:</strong> prensa, radio, televisión, que en un siglo trastocaron la relación entre comunicación y sociedad.</li>
+  <li><strong>Nuevas técnicas de comunicación:</strong> informática, telecomunicaciones, audiovisuales y su interconexión, que modificaron las condiciones de intercambio y de poder a nivel mundial.</li>
+  <li><strong>Valores, símbolos y representaciones del espacio público:</strong> información, encuestas, argumentación, retórica. Permiten a las colectividades <em>representarse</em>, entrar en <em>relaciones</em> y <em>actuar</em> sobre el mundo.</li>
+</ol>
+<p><strong>Información y comunicación son inseparables</strong> porque pertenecen al mismo sistema ligado a la modernidad, a Occidente y a la democracia: la información da forma al mundo y da cuenta de los hechos; la comunicación es el modo de difundir esa información y de construir las representaciones.</p>
+</div></details>
+</div>
+
+
+<div class="q">
+<span class="q-num">2</span>
+<p class="q-text">Wolton señala que pasamos de <strong>2 a 4 formas de cultura</strong>. Mencione los tres sentidos clásicos del término "cultura", caracterice las cuatro formas actuales y explique los <strong>tres factores</strong> que dieron origen a la cultura media.</p>
+<details><summary>Ver respuesta</summary><div class="answer">
+<p><strong>Tres sentidos clásicos:</strong></p>
+<ul>
+  <li><strong>Francés:</strong> creación, obra, patrimonio, saber, conocimiento.</li>
+  <li><strong>Alemán:</strong> próximo a civilización. Valores, representaciones, símbolos y patrimonio compartidos.</li>
+  <li><strong>Anglosajón:</strong> antropológico. Modos de vivir, estilos, saberes cotidianos, imágenes y mitos.</li>
+</ul>
+<p><strong>Cuatro formas hoy</strong> (antes había 2: élite vs popular):</p>
+<ul>
+  <li><strong>Cultura de élite:</strong> antes dominante; hoy se siente desposeída de ese lugar hegemónico.</li>
+  <li><strong>Cultura media o de la mayoría:</strong> el gran cambio. Música, cine, publicidad, TV, moda, viajes, consumo. Es la cultura moderna, el "espíritu de la época".</li>
+  <li><strong>Cultura popular:</strong> desfasada. La comparten menos por la urbanización masiva y la caída de la población rural y obrera.</li>
+  <li><strong>Culturas particulares:</strong> antes incluidas en la popular; hoy se distinguen "en nombre del derecho a la diferencia" (mujer, regiones, minorías étnicas o religiosas).</li>
+</ul>
+<p><strong>Tres factores</strong> del surgimiento de la cultura media: <strong>(1)</strong> la democratización (museos masivos como el Louvre y el Pompidou); <strong>(2)</strong> la elevación del nivel cultural mediante la educación; <strong>(3)</strong> la sociedad de consumo y la entrada de la cultura en la era industrial.</p>
+</div></details>
+</div>
+
+
+<div class="q">
+<span class="q-num">3</span>
+<p class="q-text">Distinga las tres categorías de Saussure: <strong>lenguaje, lengua y habla</strong>. ¿Por qué afirma el autor que la lengua es el verdadero objeto de la lingüística?</p>
+<details><summary>Ver respuesta</summary><div class="answer">
+<p><strong>Lenguaje:</strong> facultad humana general. Es <em>multiforme y heteróclito</em>: a la vez físico, fisiológico y psíquico; pertenece al dominio individual y al social. No se deja clasificar en una sola categoría.</p>
+<p><strong>Lengua:</strong> parte determinada y esencial del lenguaje. Es a la vez un <em>producto social</em> de la facultad del lenguaje y un <em>conjunto de convenciones</em> adoptadas por el cuerpo social. Es un sistema de signos que expresan ideas, exterior al individuo.</p>
+<p><strong>Habla (parole):</strong> acto individual de voluntad e inteligencia. Es la ejecución, siempre individual, en la que el sujeto utiliza el código de la lengua para expresar su pensamiento.</p>
+<p>La lengua es el objeto de la lingüística porque es lo único <strong>homogéneo y bien definido</strong> dentro del fenómeno lingüístico, que en su totalidad es heterogéneo. Existe en virtud de un contrato social, se puede estudiar separadamente y es concreta (los signos tienen asiento en el cerebro y la escritura los fija). Al separar lengua de habla, separamos lo social de lo individual y lo esencial de lo accesorio.</p>
+</div></details>
+</div>
+
+
+<div class="q">
+<span class="q-num">4</span>
+<p class="q-text">Caracterice el <strong>signo lingüístico</strong> según Saussure. ¿Qué significa que sea <em>arbitrario, lineal, mutable e inmutable</em>? ¿Qué es la semiología?</p>
+<details><summary>Ver respuesta</summary><div class="answer">
+<p>El <strong>signo lingüístico</strong> es una entidad psíquica de dos caras inseparables:</p>
+<ul>
+  <li><strong>Significante:</strong> la <em>imagen acústica</em>. No es el sonido material sino su huella psíquica.</li>
+  <li><strong>Significado:</strong> el <em>concepto</em> asociado a esa imagen acústica.</li>
+</ul>
+<p><strong>Características:</strong></p>
+<ul>
+  <li><strong>Arbitrario:</strong> el lazo entre significante y significado no tiene relación natural; es pura convención. Por eso "árbol", "tree" y "arbre" designan el mismo concepto en distintas lenguas.</li>
+  <li><strong>Lineal:</strong> el significante se desarrolla en el tiempo (los sonidos no se pueden pronunciar todos a la vez).</li>
+  <li><strong>Inmutable y mutable:</strong> el hablante individual no puede cambiarlo (inmutabilidad), pero la comunidad sí lo modifica con el tiempo (mutabilidad).</li>
+</ul>
+<p><strong>Semiología:</strong> Saussure propone una ciencia general que estudie <em>la vida de los signos en el seno de la vida social</em> (del griego <em>sēmeîon</em>, signo). La lingüística sería sólo una parte de esa ciencia, junto con la escritura, los ritos simbólicos, las señales militares, etc.</p>
+</div></details>
+</div>
+
+
+<div class="q">
+<span class="q-num">5</span>
+<p class="q-text">Explique el concepto de <strong>género discursivo</strong> en Bajtín. Diferencie géneros <strong>primarios</strong> y <strong>secundarios</strong>, y enumere los <strong>tres elementos</strong> que componen todo enunciado.</p>
+<details><summary>Ver respuesta</summary><div class="answer">
+<p>Para Bajtín, el uso de la lengua se da siempre en <strong>enunciados concretos</strong> (orales o escritos). Cada esfera de la actividad humana <strong>elabora sus tipos relativamente estables de enunciados:</strong> a esos tipos los llama <strong>géneros discursivos</strong>. La diversidad es enorme porque las esferas de la actividad humana son inagotables.</p>
+<p><strong>Primarios (simples):</strong> surgen en la <em>comunicación discursiva inmediata</em>, en situaciones espontáneas y cotidianas. Mayormente orales. Ejemplos: diálogo cotidiano, saludo, chiste, carta personal.</p>
+<p><strong>Secundarios (complejos):</strong> surgen en condiciones de la <em>comunicación cultural más compleja, organizada y desarrollada</em> (artística, científica, sociopolítica). Suelen ser escritos. <strong>Absorben y reelaboran</strong> los géneros primarios (una novela contiene diálogos, cartas). Ejemplos: novela, drama, ensayo, tesis, discurso parlamentario.</p>
+<p><strong>Tres elementos de todo enunciado:</strong></p>
+<ol>
+  <li><strong>Contenido temático:</strong> el tema u objeto del enunciado.</li>
+  <li><strong>Estilo:</strong> selección de los recursos léxicos, fraseológicos y gramaticales.</li>
+  <li><strong>Composición:</strong> estructura, organización del enunciado.</li>
+</ol>
+<p>Los tres están <strong>indisolublemente vinculados</strong> en la totalidad del enunciado y se determinan por la especificidad de la esfera. Un género es un tipo relativamente estable de combinación entre tema, estilo y composición.</p>
+</div></details>
+</div>
+
+
+<div class="q">
+<span class="q-num">6</span>
+<p class="q-text">Defina <strong>competencia comunicativa</strong>. Enumere y explique sus <strong>cinco sub-competencias</strong>. ¿En qué se diferencia este enfoque del enfoque tradicional centrado sólo en la competencia lingüística?</p>
+<details><summary>Ver respuesta</summary><div class="answer">
+<p>La <strong>competencia comunicativa</strong> es el conjunto de capacidades que pone en juego un hablante para producir e interpretar enunciados <em>eficaces y adecuados</em> a la situación comunicativa. El concepto surge cuando la lingüística supera el modelo estructuralista (centrado sólo en la oración y en la competencia lingüística de Chomsky) y reconoce que comunicarse es producir <strong>textos o discursos</strong> apropiados a contextos cambiantes.</p>
+<p><strong>Las 5 sub-competencias:</strong></p>
+<ol>
+  <li><strong>Lingüística:</strong> formular enunciados sintáctica y léxicamente correctos según las reglas de la lengua.</li>
+  <li><strong>Discursiva:</strong> elegir el tipo de texto adecuado a la situación (una solicitud para pedir permiso, no un cuento).</li>
+  <li><strong>Textual:</strong> construir un texto bien organizado dentro del tipo elegido (coherencia, cohesión, estructura).</li>
+  <li><strong>Pragmática:</strong> lograr el efecto buscado mediante el texto (convencer, emocionar, informar).</li>
+  <li><strong>Enciclopédica:</strong> conocimiento del mundo. Excede la lengua pero la condiciona.</li>
+</ol>
+<p><strong>Diferencia con el enfoque tradicional:</strong> la escuela tradicional se centró sólo en la competencia lingüística (gramática, sintaxis, ortografía). De ahí la queja: <em>"Las pruebas de análisis sintáctico están perfectas, pero cuando escribe es un desastre"</em>. Los chicos llegan a la escuela con competencia lingüística básica; lo que necesitan desarrollar son las otras cuatro, que se aprenden con la práctica de leer y escribir distintos tipos de texto en distintas situaciones.</p>
+</div></details>
+</div>
+
+
+<h2 id="m2">Modelo 2 · Mixto (multiple choice + desarrollo + análisis)</h2>
+<p class="exam-meta">⏱ Tiempo estimado: 90 min · Parte A (10 MC) + Parte B (2 desarrollos) + Parte C (análisis breve)</p>
+
+
+<h3>Parte A · Multiple choice</h3>
+<p style="font-size:13.5px;color:#666">Marcá la opción correcta. Cada pregunta vale 2 puntos.</p>
+
+
+<div class="q">
+<span class="q-num">A1</span>
+<p class="q-text">¿Cuál de las siguientes <em>NO</em> es una de las cuatro dimensiones de la comunicación según Wolton?</p>
+<ul class="options">
+<li><strong>a)</strong> Ideal de expresión e intercambio</li>
+<li><strong>b)</strong> Conjunto de medios masivos</li>
+<li><strong>c)</strong> Sistema económico capitalista</li>
+<li><strong>d)</strong> Valores y símbolos del espacio público</li>
+</ul>
+<details><summary>Ver respuesta</summary><div class="answer"><p><strong>c)</strong> Sistema económico capitalista. Wolton menciona: ideal de intercambio, medios masivos, nuevas técnicas, y valores/símbolos del espacio público. El sistema económico no aparece como una de las 4 dimensiones.</p></div></details>
+</div>
+
+
+<div class="q">
+<span class="q-num">A2</span>
+<p class="q-text">La <strong>cultura media</strong> según Wolton surge por la conjunción de tres factores. ¿Cuáles son?</p>
+<ul class="options">
+<li><strong>a)</strong> Revolución industrial, capitalismo y globalización</li>
+<li><strong>b)</strong> Democratización, elevación del nivel cultural por la educación, sociedad de consumo</li>
+<li><strong>c)</strong> Urbanización, alfabetización y ferrocarril</li>
+<li><strong>d)</strong> Auge de redes sociales, internet y streaming</li>
+</ul>
+<details><summary>Ver respuesta</summary><div class="answer"><p><strong>b)</strong> Democratización (museos masivos: Louvre, Pompidou), elevación del nivel cultural mediante la educación, y sociedad de consumo y entrada de la cultura en la era industrial.</p></div></details>
+</div>
+
+
+<div class="q">
+<span class="q-num">A3</span>
+<p class="q-text">Para Saussure, el <strong>habla (parole)</strong> es:</p>
+<ul class="options">
+<li><strong>a)</strong> Un sistema social de signos</li>
+<li><strong>b)</strong> Una facultad humana heteróclita y multiforme</li>
+<li><strong>c)</strong> Un acto individual de voluntad e inteligencia</li>
+<li><strong>d)</strong> Una entidad psíquica de dos caras</li>
+</ul>
+<details><summary>Ver respuesta</summary><div class="answer"><p><strong>c)</strong> El habla es la ejecución individual del código de la lengua. Las opciones a, b y d corresponden a lengua, lenguaje y signo lingüístico respectivamente.</p></div></details>
+</div>
+
+
+<div class="q">
+<span class="q-num">A4</span>
+<p class="q-text">El <strong>signo lingüístico</strong> está formado por:</p>
+<ul class="options">
+<li><strong>a)</strong> Sonido y palabra escrita</li>
+<li><strong>b)</strong> Significante (imagen acústica) y significado (concepto)</li>
+<li><strong>c)</strong> Lengua y habla</li>
+<li><strong>d)</strong> Forma y contenido temático</li>
+</ul>
+<details><summary>Ver respuesta</summary><div class="answer"><p><strong>b)</strong> Significante (imagen acústica, huella psíquica del sonido) y significado (concepto). Son dos caras inseparables de una entidad psíquica.</p></div></details>
+</div>
+
+
+<div class="q">
+<span class="q-num">A5</span>
+<p class="q-text">Decir que el signo lingüístico es <strong>arbitrario</strong> significa que:</p>
+<ul class="options">
+<li><strong>a)</strong> Cualquier hablante puede inventar nuevos signos a voluntad</li>
+<li><strong>b)</strong> El lazo entre significante y significado no tiene relación natural; es convención social</li>
+<li><strong>c)</strong> Los signos cambian de sentido según el hablante</li>
+<li><strong>d)</strong> No hay reglas para combinarlos</li>
+</ul>
+<details><summary>Ver respuesta</summary><div class="answer"><p><strong>b)</strong> No hay relación natural entre el significante y el significado. Por eso "árbol", "tree" y "arbre" designan el mismo concepto. La opción a) es falsa: el signo es <em>inmutable</em> para el individuo.</p></div></details>
+</div>
+
+
+<div class="q">
+<span class="q-num">A6</span>
+<p class="q-text">Los géneros discursivos <strong>primarios</strong> según Bajtín se caracterizan por:</p>
+<ul class="options">
+<li><strong>a)</strong> Surgir en la comunicación inmediata, espontánea y cotidiana</li>
+<li><strong>b)</strong> Absorber y reelaborar otros géneros</li>
+<li><strong>c)</strong> Pertenecer a la esfera científica y artística</li>
+<li><strong>d)</strong> Ser exclusivamente escritos</li>
+</ul>
+<details><summary>Ver respuesta</summary><div class="answer"><p><strong>a)</strong> Los primarios (simples) surgen en la comunicación discursiva inmediata, en situaciones espontáneas y cotidianas, y son mayormente orales. Las opciones b), c) y d) describen los <em>secundarios</em>.</p></div></details>
+</div>
+
+
+<div class="q">
+<span class="q-num">A7</span>
+<p class="q-text">Para Bajtín, la <strong>unidad real de la comunicación discursiva</strong> es:</p>
+<ul class="options">
+<li><strong>a)</strong> La palabra</li>
+<li><strong>b)</strong> La oración</li>
+<li><strong>c)</strong> El enunciado</li>
+<li><strong>d)</strong> El discurso completo</li>
+</ul>
+<details><summary>Ver respuesta</summary><div class="answer"><p><strong>c)</strong> El enunciado, no la oración (que es una unidad gramatical). El enunciado tiene fronteras precisas: empieza con la palabra del hablante y termina cuando éste cede el turno (cambio de sujetos discursivos).</p></div></details>
+</div>
+
+
+<div class="q">
+<span class="q-num">A8</span>
+<p class="q-text">Los <strong>tres elementos</strong> que componen todo enunciado según Bajtín son:</p>
+<ul class="options">
+<li><strong>a)</strong> Sujeto, verbo y predicado</li>
+<li><strong>b)</strong> Significante, significado y signo</li>
+<li><strong>c)</strong> Contenido temático, estilo y composición</li>
+<li><strong>d)</strong> Emisor, mensaje y receptor</li>
+</ul>
+<details><summary>Ver respuesta</summary><div class="answer"><p><strong>c)</strong> Tema (qué se dice), estilo (selección léxica/gramatical) y composición (estructura). Están indisolublemente vinculados y se determinan por la esfera.</p></div></details>
+</div>
+
+
+<div class="q">
+<span class="q-num">A9</span>
+<p class="q-text">La competencia <strong>discursiva</strong> consiste en:</p>
+<ul class="options">
+<li><strong>a)</strong> Saber gramática y sintaxis</li>
+<li><strong>b)</strong> Lograr el efecto buscado en el receptor</li>
+<li><strong>c)</strong> Elegir el tipo de texto adecuado a la situación</li>
+<li><strong>d)</strong> Tener conocimientos del mundo</li>
+</ul>
+<details><summary>Ver respuesta</summary><div class="answer"><p><strong>c)</strong> La discursiva es elegir el <em>tipo de texto</em> apropiado (una solicitud, no un cuento, para pedir permiso). Las opciones a), b) y d) corresponden a lingüística, pragmática y enciclopédica.</p></div></details>
+</div>
+
+
+<div class="q">
+<span class="q-num">A10</span>
+<p class="q-text">Una diferencia clave entre <strong>oralidad y escritura</strong> es que en la oralidad:</p>
+<ul class="options">
+<li><strong>a)</strong> El receptor está ausente y debe imaginarse</li>
+<li><strong>b)</strong> Hay contexto compartido entre emisor y receptor, con apoyo paraverbal y no verbal</li>
+<li><strong>c)</strong> La sintaxis es más cuidada y planificada</li>
+<li><strong>d)</strong> Se usa cohesión explícita con conectores</li>
+</ul>
+<details><summary>Ver respuesta</summary><div class="answer"><p><strong>b)</strong> En la oralidad emisor y receptor comparten tiempo (y a veces espacio), con apoyo de gestos, entonación, miradas. Las opciones a), c) y d) describen la <em>escritura</em>.</p></div></details>
+</div>
+
+
+<h3>Parte B · Desarrollo</h3>
+
+
+<div class="q">
+<span class="q-num">B1</span>
+<p class="q-text">Compare <strong>oralidad y escritura</strong>. Mencione al menos <strong>cinco diferencias</strong> y explique brevemente por qué requieren competencias comunicativas diferentes en quien las produce.</p>
+<details><summary>Ver respuesta</summary><div class="answer">
+<p>Cinco diferencias posibles (de las 10 que vimos):</p>
+<ol>
+  <li><strong>Canal:</strong> oralidad usa el canal fónico (ondas acústicas); escritura, el grafemático (signos visuales).</li>
+  <li><strong>Carácter temporal vs espacial:</strong> la oralidad es efímera; la escritura es permanente y permite reelaboración.</li>
+  <li><strong>Contexto:</strong> en la oralidad emisor y receptor comparten tiempo y/o espacio; la escritura es comunicación diferida.</li>
+  <li><strong>Apoyo no verbal:</strong> la oralidad cuenta con entonación, gestos, miradas; la escritura sólo con signos lingüísticos, puntuación y formato.</li>
+  <li><strong>Planificación:</strong> la oralidad es espontánea, con repeticiones y "muletillas"; la escritura es planificada, se piensa, se borra, se reescribe.</li>
+</ol>
+<p>Requieren <strong>competencias diferentes</strong> porque el escritor no puede contar con el contexto compartido ni con la retroalimentación inmediata del receptor. Debe dejar en su texto todas las "instrucciones" que el lector necesita: usar cohesión explícita (conectores, mantenimiento del referente), explicitar el tiempo y el lugar, anticipar implícitos, mantener el registro. La oralidad, en cambio, permite reformular sobre la marcha, usar deícticos ("acá", "esto") y apoyarse en lo no verbal.</p>
+</div></details>
+</div>
+
+
+<div class="q">
+<span class="q-num">B2</span>
+<p class="q-text">Explique en qué consiste la <strong>competencia comunicativa</strong> y por qué resulta más útil que el modelo centrado sólo en la <em>competencia lingüística</em> a la hora de evaluar la capacidad de comunicarse de un hablante.</p>
+<details><summary>Ver respuesta</summary><div class="answer">
+<p>La competencia comunicativa es el conjunto de capacidades que un hablante pone en juego para producir e interpretar enunciados <em>eficaces y adecuados a la situación comunicativa</em>. Incluye cinco sub-competencias: lingüística, discursiva, textual, pragmática y enciclopédica.</p>
+<p>Es más útil que el modelo centrado sólo en la competencia lingüística porque comunicarse no es únicamente construir oraciones gramaticalmente correctas: hay que <strong>elegir el tipo de texto</strong> apropiado a la situación (discursiva), <strong>organizarlo</strong> con coherencia y cohesión (textual), <strong>lograr el efecto</strong> buscado en el receptor (pragmática) y movilizar <strong>conocimientos del mundo</strong> que la lengua sola no provee (enciclopédica). De ahí la observación frecuente: <em>"Las pruebas de análisis sintáctico están perfectas, pero cuando escribe es un desastre"</em>. Los hablantes llegan a la escuela con competencia lingüística básica; lo que necesitan desarrollar son las otras cuatro, mediante la práctica de leer y escribir distintos tipos de texto en distintas situaciones.</p>
+</div></details>
+</div>
+
+
+<h3>Parte C · Análisis de fragmento</h3>
+
+<div class="q">
+<span class="q-num">C1</span>
+<p class="q-text">Lea el siguiente fragmento y respondá:</p>
+<div class="fragment">
+"Che, ¿viste lo que pasó ayer en la cancha? Una locura, no podía creer el penal que cobró el árbitro. Te juro que mi viejo casi rompe el televisor de los nervios..."
+</div>
+<p>a) ¿A qué <strong>género discursivo</strong> de Bajtín pertenece este enunciado: primario o secundario? Justificá.</p>
+<p>b) Identificá <strong>dos rasgos típicos de la oralidad</strong> presentes en el fragmento.</p>
+<p>c) ¿Qué <strong>variedad lingüística</strong> (lecto y registro) usa el hablante?</p>
+<details><summary>Ver respuesta</summary><div class="answer">
+<p><strong>a) Género primario.</strong> Es una conversación espontánea entre conocidos, surge en la comunicación discursiva inmediata, es oral y cotidiano. No hay elaboración cultural compleja como en una novela o un ensayo.</p>
+<p><strong>b) Rasgos de oralidad</strong> (cualquier dos):</p>
+<ul>
+  <li><strong>Apelativos y marcas de subjetividad:</strong> "Che", "¿viste?", "Te juro".</li>
+  <li><strong>Espontaneidad:</strong> oraciones sueltas, exclamaciones ("Una locura").</li>
+  <li><strong>Deícticos:</strong> "ayer", "el televisor" (referentes que funcionan porque hay contexto compartido).</li>
+  <li><strong>Implícitos:</strong> se da por sabido qué partido fue, qué penal, etc.</li>
+  <li><strong>Sintaxis libre:</strong> oración inacabada con puntos suspensivos, registro coloquial.</li>
+</ul>
+<p><strong>c) Variedad:</strong></p>
+<ul>
+  <li><strong>Dialecto:</strong> español rioplatense ("Che", "viste", "mi viejo", "cancha", voseo implícito).</li>
+  <li><strong>Sociolecto/cronolecto:</strong> coloquial, juvenil-adulto.</li>
+  <li><strong>Registro:</strong> oral, informal, no técnico.</li>
+</ul>
+</div></details>
+</div>
+
+
+<h2 id="tips">💡 Tips para el día del parcial</h2>
+
+<ul>
+  <li><strong>Citá a los autores por nombre</strong> en tus respuestas: "Wolton afirma...", "Para Saussure...", "Bajtín distingue...". Muestra que leíste el texto.</li>
+  <li><strong>Definí primero, ejemplificá después.</strong> Una respuesta de desarrollo bien estructurada va: definición conceptual → desarrollo de los componentes → ejemplo o aplicación.</li>
+  <li><strong>Cuidá el vocabulario técnico:</strong> "significante" no es "sonido"; "enunciado" no es "oración"; "competencia" no es "conocimiento".</li>
+  <li><strong>En multiple choice,</strong> leé todas las opciones antes de marcar. Suelen incluir opciones casi correctas pero con un error sutil.</li>
+  <li><strong>Si no sabés algo, escribí lo que sí sabés relacionado.</strong> Una pregunta sobre signo lingüístico siempre se puede conectar con lengua, sistema, convención, semiología.</li>
+  <li><strong>Tiempo:</strong> dejá los últimos 10 minutos para revisar y corregir. Releé el <a href="index.html#cheat" style="color:#c00;font-weight:600">cheatsheet</a> antes de entrar.</li>
+</ul>
+
+<div class="box" style="margin-top:24px">
+<p style="text-align:center"><strong><a href="index.html" style="color:#c00;text-decoration:none">← Volver al resumen</a></strong></p>
+</div>
+
+<footer>
+Modelos de práctica · Análisis Conceptual · UCES 2026<br>
+<span style="font-size:11.5px">No son exámenes oficiales. Sirven para autoevaluarte sobre los temas del programa.</span>
+</footer>
+
+</div>
+
+</body>
+</html>
